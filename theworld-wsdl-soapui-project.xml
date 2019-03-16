@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="10c47cba-06ce-44ce-87a2-8f9db216ebde" activeEnvironment="Default" name="theworld?wsdl" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="c6330901-6409-49ca-b673-9869890d8da8" wsaVersion="NONE" name="TheWorldSoapBinding" type="wsdl" bindingName="{http://service/}TheWorldSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8000/theworld?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8000/theworld?wsdl"><con:part><con:url>http://localhost:8000/theworld?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="TheWorld" targetNamespace="http://service/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://service/">
+      <xsd:element name="theWorld" type="tns:theWorld"/>
+      <xsd:complexType name="theWorld">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="arg0" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="theWorldResponse" type="tns:theWorldResponse"/>
+      <xsd:complexType name="theWorldResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="theWorld">
+    <wsdl:part element="tns:theWorld" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="theWorldResponse">
+    <wsdl:part element="tns:theWorldResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="TheWorldPortType">
+    <wsdl:operation name="theWorld">
+      <wsdl:input message="tns:theWorld" name="theWorld"></wsdl:input>
+      <wsdl:output message="tns:theWorldResponse" name="theWorldResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TheWorldSoapBinding" type="tns:TheWorldPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="theWorld">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="theWorld">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="theWorldResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TheWorld">
+    <wsdl:port binding="tns:TheWorldSoapBinding" name="TheWorldPort">
+      <soap:address location="http://localhost:8000/theworld"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8000/theworld</con:endpoint></con:endpoints><con:operation id="4979ce42-3688-4917-a3de-3954f3d41be9" isOneWay="false" action="" name="theWorld" bindingOperationName="theWorld" type="Request-Response" outputName="theWorldResponse" inputName="theWorld" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7c06e9e9-fb2b-412b-8cd3-e4c450881f64" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8000/theworld</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:theWorld>
+         <!--Optional:-->
+         <ser:arg0>2010</ser:arg0>
+      </ser:theWorld>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://service/TheWorldPortType/theWorld"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
