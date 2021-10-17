@@ -39,7 +39,7 @@
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-transports-http</artifactId>
-			<version>3.3.0</version>
+			<version>3.4.4</version>
 		</dependency>
 		<!-- Jetty is needed if you're using the CXFServlet -->
 		<dependency>
